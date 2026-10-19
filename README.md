@@ -21,6 +21,8 @@ You can simply log in using the credentials that you would use in the respective
     - The time at which the next schedule setpoint gets activated
     - The current schedule setpoint
     - Switch to control fireplace mode
+    - Heating curve slope and base temperature, when the climate zone uses a heating curve
+    - The maximum flow temperature of the heating curve
 - Each hot water zone exposes:
     - The water temperature and status
     - Water heater control with modes (Schedule, Comfort, Eco) and target temperature, the same modes as in the Remeha Home app
