@@ -9,7 +9,13 @@ from homeassistant.components.binary_sensor import (
     BinarySensorEntityDescription,
     BinarySensorDeviceClass,
 )
-from homeassistant.const import UnitOfEnergy, UnitOfTemperature, UnitOfPressure, UnitOfVolume
+from homeassistant.const import (
+    EntityCategory,
+    UnitOfEnergy,
+    UnitOfTemperature,
+    UnitOfPressure,
+    UnitOfVolume,
+)
 
 DOMAIN = "remeha_home"
 
@@ -186,6 +192,16 @@ CLIMATE_ZONE_SENSOR_TYPES = [
         name="Current Schedule Setpoint",
         native_unit_of_measurement=UnitOfTemperature.CELSIUS,
         device_class=SensorDeviceClass.TEMPERATURE,
+    ),
+]
+
+HEATING_CURVE_SENSOR_TYPES = [
+    SensorEntityDescription(
+        key="heatingCurve.maxFlowTemperature",
+        translation_key="heating_curve_max_flow_temperature",
+        native_unit_of_measurement=UnitOfTemperature.CELSIUS,
+        device_class=SensorDeviceClass.TEMPERATURE,
+        entity_category=EntityCategory.DIAGNOSTIC,
     ),
 ]
 

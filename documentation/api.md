@@ -267,6 +267,36 @@ Request:
 }
 ```
 
+## GET `/climate-zones/{climate_zone_id}/heating-curve`
+Get the weather-compensated heating curve of the climate zone, including the allowed ranges.
+
+Response:
+```json
+{
+  "slope": 1.1,
+  "minimumSlope": 0.0,
+  "maximumSlope": 4.0,
+  "incrementSlope": 0.1,
+  "baseSetpoint": 25.0,
+  "minimumBaseSetpoint": 15.0,
+  "maximumBaseSetpoint": 70.0,
+  "incrementBaseSetpoint": 0.5,
+  "maxFlowTemperature": 70.0
+}
+```
+
+## POST `/climate-zones/{climate_zone_id}/heating-curve`
+Set the heating curve of the climate zone.
+Both `slope` and `baseSetpoint` are required.
+
+Request:
+```json
+{
+  "slope": 1.1,
+  "baseSetpoint": 25.0
+}
+```
+
 ## POST `/hot-water-zones/{hot_water_zone_id}/modes/anti-frost`
 Switch to the Eco mode for the hot water zone.
 
